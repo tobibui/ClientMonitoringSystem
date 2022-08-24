@@ -4,19 +4,24 @@
  */
 package clientmonitoring;
 
-import static clientmonitoring.MainForm.FilePath;
-import static clientmonitoring.MainForm.SERVER_PORT;
 import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.RowFilter;
+import javax.swing.SwingUtilities;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -189,7 +194,7 @@ public class ServerGUI extends javax.swing.JFrame {
         try {
             Integer PORT = Integer.parseInt(inputPort.getText());
             serverSocket = new ServerSocket(PORT);
-            labelIP.setText("IP: "+ serverSocket.getInetAddress().getLocalHost().getHostAddress());
+            labelIP.setText("IP: " + serverSocket.getInetAddress().getLocalHost().getHostAddress());
             AcceptConnect rt = new AcceptConnect(serverSocket);
 //            rt.start();
 //            MainForm.FilterClient tb = new MainForm.FilterClient();
@@ -201,86 +206,6 @@ public class ServerGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnStartActionPerformed
 
-    class AcceptConnect extends Thread{
-        private ServerSocket _serverSocket;
-        public AcceptConnect(ServerSocket serverSocket)
-        {
-            this._serverSocket = serverSocket;
-        }
-        @Override
-        public void run()
-        {
-            while (!_serverSocket.isClosed())
-            {
-                try
-                {
-                    //Call the callback whenever accepting a new connection
-                    Socket ss = _serverSocket.accept();
-                    WorkWithClient th  = new WorkWithClient(ss);
-                    th.start();
-                }
-                catch (Exception e)
-                {
-                }
-            }
-        }
-    }
-    
-    class WorkWithClient extends Thread
-    {
-        private Socket socket;
-        //private JTable _table;
-        public WorkWithClient(Socket socket) {
-            this.socket = socket;
-        }
-        @Override
-        public void run() {
-            try {
-                writeLog("Client: " + socket.getInetAddress().getLocalHost().getHostAddress().toString()+ ":" + socket.getPort() + " connect to Server");
-                //DataInputStream dis = new DataInputStream(socket.getInputStream());
-                //ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-                DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-
-                DefaultTableModel model = (DefaultTableModel) tableLstClient.getModel();
-                MainForm.TableRefresh Clientth = new MainForm.TableRefresh(model);
-                int rowCount = model.getRowCount();
-                model.addRow(new Object[]{rowCount + 1, (socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":"+ String.valueOf(socket.getPort())) });
-                Clientth.start();
-                //Gửi thông báo đường dẫn thư mục giám sát cho client
-                dos.writeUTF(FilePath);
-                writeLog("Monitor folder: " + FilePath);
-                dos.flush();
-                MainForm.ReceiveMessage rc = new MainForm.ReceiveMessage(socket);
-                rc.start();
-            } catch (IOException e) {
-
-            }  
-        }
-    }
-    
-    private static void writeLog(String info) {
-        String filename = "LogServer.txt";
-        BufferedWriter bw = null;
-        FileWriter fw = null;
-        try {
-            fw = new FileWriter(filename, true);
-            bw = new BufferedWriter(fw);
-            bw.write(info);
-            bw.write("\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (bw != null)
-                    bw.close();
-                if (fw != null)
-                    fw.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
-    
     /**
      * @param args the command line arguments
      */
@@ -314,6 +239,241 @@ public class ServerGUI extends javax.swing.JFrame {
                 new ServerGUI().setVisible(true);
             }
         });
+    }
+
+    class AcceptConnect extends Thread {
+
+        private ServerSocket _serverSocket;
+
+        public AcceptConnect(ServerSocket serverSocket) {
+            this._serverSocket = serverSocket;
+        }
+
+        @Override
+        public void run() {
+            while (!_serverSocket.isClosed()) {
+                try {
+                    //Call the callback whenever accepting a new connection
+                    Socket ss = _serverSocket.accept();
+                    WorkWithClient th = new WorkWithClient(ss);
+                    th.start();
+                } catch (Exception e) {
+                }
+            }
+        }
+    }
+
+    class WorkWithClient extends Thread {
+
+        private Socket socket;
+
+        //private JTable _table;
+        public WorkWithClient(Socket socket) {
+            this.socket = socket;
+        }
+
+        @Override
+        public void run() {
+            try {
+                writeLog("Client: " + socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + socket.getPort() + " connect to Server");
+                //DataInputStream dis = new DataInputStream(socket.getInputStream());
+                //ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+                DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+
+                DefaultTableModel model = (DefaultTableModel) tableClient.getModel();
+                TableRefresh Clientth = new TableRefresh(model);
+                int rowCount = model.getRowCount();
+                model.addRow(new Object[]{rowCount + 1, (socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + String.valueOf(socket.getPort()))});
+                Clientth.start();
+                //Gửi thông báo đường dẫn thư mục giám sát cho client
+                dos.writeUTF(FilePath);
+                writeLog("Monitor folder: " + FilePath);
+                dos.flush();
+                ReceiveMessage rc = new ReceiveMessage(socket);
+                rc.start();
+            } catch (IOException e) {
+
+            }
+        }
+    }
+
+    class ReceiveMessage extends Thread {
+
+        private Socket socket;
+        private ObjectInputStream ois;
+
+        public ReceiveMessage(Socket socket) throws IOException {
+            this.socket = socket;
+            this.ois = new ObjectInputStream(socket.getInputStream());
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                try {
+                    Message m = (Message) ois.readObject();
+                    if (m != null) {
+                        DefaultTableModel model = (DefaultTableModel) tableLog.getModel();
+                        TableRefresh Clientth = new TableRefresh(model);
+                        int rowCount = model.getRowCount();
+                        model.addRow(new Object[]{rowCount + 1, m.getTime(), m.getAction(), (socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + String.valueOf(socket.getPort())), m.getDescription()});
+                        Clientth.start();
+                        writeLog(socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + socket.getPort() + ": Change " + m.getAction() + " " + m.getTime() + " " + m.getDescription());
+
+                    }
+
+                } catch (IOException ex) {
+                    Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+
+    class TableRefresh extends Thread {
+
+        private final DefaultTableModel _model;
+
+        public TableRefresh(DefaultTableModel model) {
+            this._model = model;
+        }
+
+        @Override
+        public void run() {
+            try {
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        _model.fireTableDataChanged();
+                    }
+                });
+                Thread.sleep(1000);
+            } catch (Exception e) {
+            }
+
+        }
+    }
+
+    class FilterClient extends Thread {
+
+        public FilterClient() {
+        }
+
+        @Override
+        public void run() {
+            try {
+                TableRowSorter<TableModel> sort = new TableRowSorter<>(tableClient.getModel());
+                tableClient.setRowSorter(sort);
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        inputFilterClient.getDocument().addDocumentListener(new DocumentListener() {
+                            @Override
+                            public void insertUpdate(DocumentEvent e) {
+                                String str = inputFilterClient.getText();
+                                if (str.trim().length() == 0) {
+                                    sort.setRowFilter(null);
+                                } else {
+                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                                }
+                            }
+
+                            @Override
+                            public void removeUpdate(DocumentEvent e) {
+                                String str = inputFilterClient.getText();
+                                if (str.trim().length() == 0) {
+                                    sort.setRowFilter(null);
+                                } else {
+                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                                }
+                            }
+
+                            @Override
+                            public void changedUpdate(DocumentEvent e) {
+                                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                            }
+                        });
+                    }
+                });
+
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    //Filter log trên server
+    class FilterLog extends Thread {
+
+        public FilterLog() {
+        }
+
+        @Override
+        public void run() {
+            try {
+                TableRowSorter<TableModel> sort = new TableRowSorter<>(tableLog.getModel());
+                tableLog.setRowSorter(sort);
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        inputFilterLog.getDocument().addDocumentListener(new DocumentListener() {
+                            @Override
+                            public void insertUpdate(DocumentEvent e) {
+                                String str = inputFilterLog.getText();
+                                if (str.trim().length() == 0) {
+                                    sort.setRowFilter(null);
+                                } else {
+                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                                }
+                            }
+
+                            @Override
+                            public void removeUpdate(DocumentEvent e) {
+                                String str = inputFilterLog.getText();
+                                if (str.trim().length() == 0) {
+                                    sort.setRowFilter(null);
+                                } else {
+                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                                }
+                            }
+
+                            @Override
+                            public void changedUpdate(DocumentEvent e) {
+                                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                            }
+                        });
+                    }
+                });
+
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    //Ghi log Server
+    private static void writeLog(String info) {
+        String filename = "LogServer.txt";
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter(filename, true);
+            bw = new BufferedWriter(fw);
+            bw.write(info);
+            bw.write("\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (bw != null) {
+                    bw.close();
+                }
+                if (fw != null) {
+                    fw.close();
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
