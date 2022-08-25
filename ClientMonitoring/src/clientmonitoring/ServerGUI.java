@@ -196,13 +196,13 @@ public class ServerGUI extends javax.swing.JFrame {
             serverSocket = new ServerSocket(PORT);
             labelIP.setText("IP: " + serverSocket.getInetAddress().getLocalHost().getHostAddress());
             AcceptConnect rt = new AcceptConnect(serverSocket);
-//            rt.start();
-//            MainForm.FilterClient tb = new MainForm.FilterClient();
-//            tb.start();
-//            MainForm.FilterLog fl = new MainForm.FilterLog();
-//            fl.start();
+            rt.start();
+            FilterClient tb = new FilterClient();
+            tb.start();
+            FilterLog fl = new FilterLog();
+            fl.start();
         } catch (IOException ex) {
-            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnStartActionPerformed
 
@@ -323,9 +323,9 @@ public class ServerGUI extends javax.swing.JFrame {
                     }
 
                 } catch (IOException ex) {
-                    Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }

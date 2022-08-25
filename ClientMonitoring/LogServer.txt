@@ -1,2 +1,29 @@
 Server 192.168.0.107:7000 is started
 Server 192.168.0.107:7000 is started
+Server 192.168.0.107:7000 is started
+Client: 192.168.0.107:1059 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+Client: 192.168.0.107:1080 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+Client: 192.168.0.107:1044 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:1044: Change ENTRY_CREATE 25/08/2022 10:09:23 New folder
+192.168.0.107:1044: Change ENTRY_DELETE 25/08/2022 10:09:27 New folder
+192.168.0.107:1044: Change ENTRY_DELETE 25/08/2022 10:09:27 New folder
+Client: 192.168.0.107:1056 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:07:36 haha
+192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:07:56 alo
+192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:07:56 alo
+192.168.0.107:1056: Change ENTRY_CREATE 26/08/2022 12:08:06 New folder
+192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:08:26 New folder
+192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:08:26 New folder
+192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:09:20 ahihi
+192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:09:26 vip pro
+Client: 192.168.0.107:1106 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+Client: 192.168.0.107:30556 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:30556: Change ENTRY_CREATE 26/08/2022 01:19:37 New folder
+192.168.0.107:30556: Change ENTRY_DELETE 26/08/2022 01:19:41 New folder
+192.168.0.107:30556: Change ENTRY_DELETE 26/08/2022 01:19:41 New folder
