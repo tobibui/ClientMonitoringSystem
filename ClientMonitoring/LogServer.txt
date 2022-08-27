@@ -1,29 +1,118 @@
-Server 192.168.0.107:7000 is started
-Server 192.168.0.107:7000 is started
-Server 192.168.0.107:7000 is started
-Client: 192.168.0.107:1059 connect to Server
+Client: 192.168.0.107:1857 connect to Server
 Monitor folder: C:\ClientMonitoringSystem\Data
-Client: 192.168.0.107:1080 connect to Server
+192.168.0.107:1857: Change ENTRY_CREATE 27/08/2022 12:43:36 New Text Document.txt
+192.168.0.107:1857: Change ENTRY_DELETE 27/08/2022 12:43:38 New Text Document.txt
+192.168.0.107:1857: Change ENTRY_DELETE 27/08/2022 12:43:38 New Text Document.txt
+Client: 192.168.0.107:1872 connect to Server
 Monitor folder: C:\ClientMonitoringSystem\Data
-Client: 192.168.0.107:1044 connect to Server
+192.168.0.107:1872: Change ENTRY_CREATE 27/08/2022 01:01:23 New folder
+192.168.0.107:1872: Change ENTRY_DELETE 27/08/2022 01:01:25 New folder
+192.168.0.107:1872: Change ENTRY_DELETE 27/08/2022 01:01:25 New folder
+Client: 192.168.0.107:1879 connect to Server
 Monitor folder: C:\ClientMonitoringSystem\Data
-192.168.0.107:1044: Change ENTRY_CREATE 25/08/2022 10:09:23 New folder
-192.168.0.107:1044: Change ENTRY_DELETE 25/08/2022 10:09:27 New folder
-192.168.0.107:1044: Change ENTRY_DELETE 25/08/2022 10:09:27 New folder
-Client: 192.168.0.107:1056 connect to Server
+Client: 192.168.0.107:1910 connect to Server
 Monitor folder: C:\ClientMonitoringSystem\Data
-192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:07:36 haha
-192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:07:56 alo
-192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:07:56 alo
-192.168.0.107:1056: Change ENTRY_CREATE 26/08/2022 12:08:06 New folder
-192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:08:26 New folder
-192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:08:26 New folder
-192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:09:20 ahihi
-192.168.0.107:1056: Change ENTRY_DELETE 26/08/2022 12:09:26 vip pro
-Client: 192.168.0.107:1106 connect to Server
+Client: 192.168.0.107:1912 connect to Server
 Monitor folder: C:\ClientMonitoringSystem\Data
-Client: 192.168.0.107:30556 connect to Server
+Client: 192.168.0.107:1919 connect to Server
 Monitor folder: C:\ClientMonitoringSystem\Data
-192.168.0.107:30556: Change ENTRY_CREATE 26/08/2022 01:19:37 New folder
-192.168.0.107:30556: Change ENTRY_DELETE 26/08/2022 01:19:41 New folder
-192.168.0.107:30556: Change ENTRY_DELETE 26/08/2022 01:19:41 New folder
+Client: 192.168.0.107:1920 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+Client: 192.168.0.107:1937 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:1937: Change ENTRY_DELETE 27/08/2022 02:38:10 ahaha.txt
+192.168.0.107:1937: Change ENTRY_DELETE 27/08/2022 02:38:10 ahaha.txt
+Client: 192.168.0.107:1945 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:1945: Change ENTRY_DELETE 27/08/2022 02:40:00 ahihi.txt
+192.168.0.107:1945: Change ENTRY_DELETE 27/08/2022 02:40:00 ahihi.txt
+Client: 192.168.0.107:1965 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:1965: Change ENTRY_DELETE 27/08/2022 03:19:06 njknlk.txt
+192.168.0.107:1965: Change ENTRY_DELETE 27/08/2022 03:19:10 bum bum
+Client: 192.168.0.107:1984 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:1984: Change ENTRY_CREATE 27/08/2022 03:41:23 New folder
+192.168.0.107:1984: Change ENTRY_DELETE 27/08/2022 03:41:26 New folder
+192.168.0.107:1984: Change ENTRY_DELETE 27/08/2022 03:41:26 New folder
+Client: 192.168.0.107:1997 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:1997: Change ENTRY_CREATE 27/08/2022 04:02:18 New folder
+192.168.0.107:1997: Change ENTRY_DELETE 27/08/2022 04:02:21 New folder
+192.168.0.107:1997: Change ENTRY_DELETE 27/08/2022 04:02:21 New folder
+192.168.0.107:1997: Change ENTRY_DELETE 27/08/2022 04:02:48 ehe
+192.168.0.107:1997: Change ENTRY_DELETE 27/08/2022 04:02:48 ehe
+Client: 192.168.0.107:2002 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2002: Change ENTRY_DELETE 27/08/2022 04:14:54 tete - Copy.txt
+Client: 192.168.0.107:2031 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2031: Change ENTRY_DELETE 27/08/2022 04:54:36 tete.txt
+192.168.0.107:2031: Change ENTRY_DELETE 27/08/2022 04:54:36 tete.txt
+Client: 192.168.0.107:2053 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2053: Change ENTRY_DELETE 27/08/2022 05:10:20 acc.txt
+192.168.0.107:2053: Change ENTRY_CREATE 27/08/2022 05:20:49 New folder
+192.168.0.107:2053: Change ENTRY_DELETE 27/08/2022 05:20:51 New folder
+192.168.0.107:2053: Change ENTRY_DELETE 27/08/2022 05:20:51 New folder
+Client: 192.168.0.107:2066 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2066: Change Tạo mới 27/08/2022 05:25:16 New folder
+192.168.0.107:2066: Change Xóa 27/08/2022 05:25:18 New folder
+192.168.0.107:2066: Change Xóa 27/08/2022 05:25:18 New folder
+192.168.0.107:2066: Change Tạo mới 27/08/2022 05:25:58 Hihi\New Text Document.txt
+192.168.0.107:2066: Change Chỉnh sửa 27/08/2022 05:25:58 Hihi
+192.168.0.107:2066: Change Xóa 27/08/2022 05:26:30 Hihi\New Text Document.txt
+192.168.0.107:2066: Change Xóa 27/08/2022 05:26:30 Hihi\New Text Document.txt
+192.168.0.107:2066: Change Xóa 27/08/2022 05:26:30 Hihi\New Text Document.txt
+192.168.0.107:2066: Change Tạo mới 27/08/2022 05:26:44 Hihi\New Text Document.txt
+192.168.0.107:2066: Change Chỉnh sửa 27/08/2022 05:26:44 Hihi
+192.168.0.107:2066: Change Xóa 27/08/2022 05:26:46 Hihi\New Text Document.txt
+192.168.0.107:2066: Change Xóa 27/08/2022 05:26:46 Hihi\New Text Document.txt
+192.168.0.107:2066: Change Chỉnh sửa 27/08/2022 05:26:46 Hihi
+192.168.0.107:2066: Change Tạo mới 27/08/2022 05:27:02 New Text Document.txt
+192.168.0.107:2066: Change Xóa 27/08/2022 05:27:07 New Text Document.txt
+192.168.0.107:2066: Change Xóa 27/08/2022 05:27:07 New Text Document.txt
+192.168.0.107:2066: Change Chỉnh sửa 27/08/2022 05:27:28 om.txt
+Client: 192.168.0.107:2077 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2077: Change Tạo mới 27/08/2022 05:39:11 Tạo mới om - Copy.txt
+192.168.0.107:2077: Change Chỉnh sửa 27/08/2022 05:39:11 Chỉnh sửa om - Copy.txt
+Client: 192.168.0.107:2082 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2082: Change Xóa 27/08/2022 05:53:51 Xóa om - Copy.txt
+Client: 192.168.0.107:2085 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2085: Change Xóa 27/08/2022 05:56:28 Xóa om.txt
+Client: 192.168.0.107:2094 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+Client: 192.168.0.107:2097 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2097: Change Xóa 27/08/2022 06:02:33 Xóa qeweqwe
+192.168.0.107:2097: Change Xóa 27/08/2022 06:03:01 Xóa 888
+192.168.0.107:2097: Change Xóa 27/08/2022 06:03:15 Xóa Hihi
+Client: 192.168.0.107:2102 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2102: Change Tạo mới 27/08/2022 06:08:30 Tạo mới LogClient.txt
+192.168.0.107:2102: Change Tạo mới 27/08/2022 06:08:30 Tạo mới LogClient.txt
+192.168.0.107:2102: Change Chỉnh sửa 27/08/2022 06:08:30 Chỉnh sửa LogClient.txt
+192.168.0.107:2102: Change Chỉnh sửa 27/08/2022 06:08:30 Chỉnh sửa LogClient.txt
+192.168.0.107:2102: Change Chỉnh sửa 27/08/2022 06:08:30 Chỉnh sửa LogClient.txt
+Client: 192.168.0.107:2110 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2110: Change Tạo mới 27/08/2022 06:13:57 Tạo mới LogClient - Copy.txt
+192.168.0.107:2110: Change Tạo mới 27/08/2022 06:13:57 Tạo mới LogClient - Copy.txt
+Client: 192.168.0.107:2129 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2129: Change Xóa 27/08/2022 06:32:44 Xóa LogClient - Copy.txt
+192.168.0.107:2129: Change Tạo mới 27/08/2022 06:32:51 Tạo mới New folder
+Client: 192.168.0.107:2136 connect to Server
+Monitor folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:2136: Change Xóa 27/08/2022 06:38:08 Xóa 12213213
+192.168.0.107:2136: Change Tạo mới 27/08/2022 06:38:14 Tạo mới New Text Document.txt
+192.168.0.107:2136: Change Xóa 27/08/2022 06:38:15 Xóa New Text Document.txt
+192.168.0.107:2136: Change Xóa 27/08/2022 06:38:15 Xóa New Text Document.txt
+192.168.0.107:2136: Change Xóa 27/08/2022 06:38:34 Xóa 123.txt
+192.168.0.107:2136: Change Xóa 27/08/2022 06:38:34 Xóa 123.txt
+192.168.0.107:2136: Change Tạo mới 27/08/2022 06:38:50 Tạo mới New Text Document.txt
+192.168.0.107:2136: Change Chỉnh sửa 27/08/2022 06:39:01 Chỉnh sửa New Text Document.txt

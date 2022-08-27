@@ -99,12 +99,10 @@ public class ServerGUI extends javax.swing.JFrame {
 
         tableLog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "#Num", "Time", "Action", "IP Client", "Dien giai"
+                "#Num", "Time", "Action", "IP Client", "Content"
             }
         ) {
             Class[] types = new Class [] {
@@ -116,6 +114,9 @@ public class ServerGUI extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(tableLog);
+        if (tableLog.getColumnModel().getColumnCount() > 0) {
+            tableLog.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         jLabel1.setText("Filter client:");
 
@@ -131,30 +132,28 @@ public class ServerGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelIP, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelIP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(labelPort)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnStart))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5)))
+                        .addComponent(jScrollPane5))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -167,15 +166,16 @@ public class ServerGUI extends javax.swing.JFrame {
                         .addComponent(labelIP)
                         .addComponent(btnStart)
                         .addComponent(labelPort)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -183,24 +183,20 @@ public class ServerGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static final int NUM_OF_THREAD = 4;
-    public final static int SERVER_PORT = 7000;
-    public final static String FilePath = "C:\\ClientMonitoringSystem\\Data";
-    ExecutorService executor = Executors.newFixedThreadPool(NUM_OF_THREAD);
+    public final static String PathMoitoring = "C:\\ClientMonitoringSystem\\Data";
     ServerSocket serverSocket = null;
     Socket socket = null;
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
-        // TODO add your handling code here:         
         try {
             Integer PORT = Integer.parseInt(inputPort.getText());
             serverSocket = new ServerSocket(PORT);
             labelIP.setText("IP: " + serverSocket.getInetAddress().getLocalHost().getHostAddress());
-            AcceptConnect rt = new AcceptConnect(serverSocket);
+            Guard rt = new Guard(serverSocket);
             rt.start();
-            FilterClient tb = new FilterClient();
-            tb.start();
-            FilterLog fl = new FilterLog();
-            fl.start();
+            SearchClient searchClient = new SearchClient();
+            searchClient.start();
+            SearchLog search = new SearchLog();
+            search.start();
         } catch (IOException ex) {
             Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -210,30 +206,6 @@ public class ServerGUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ServerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ServerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ServerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ServerGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ServerGUI().setVisible(true);
@@ -241,68 +213,73 @@ public class ServerGUI extends javax.swing.JFrame {
         });
     }
 
-    class AcceptConnect extends Thread {
+    class Guard extends Thread {
 
-        private ServerSocket _serverSocket;
+        private ServerSocket server;
 
-        public AcceptConnect(ServerSocket serverSocket) {
-            this._serverSocket = serverSocket;
+        public Guard(ServerSocket serverSocket) {
+            this.server = serverSocket;
         }
 
         @Override
         public void run() {
-            while (!_serverSocket.isClosed()) {
+            while (!server.isClosed()) {
                 try {
-                    //Call the callback whenever accepting a new connection
-                    Socket ss = _serverSocket.accept();
-                    WorkWithClient th = new WorkWithClient(ss);
-                    th.start();
-                } catch (Exception e) {
+                    Socket socketSession = server.accept();
+                    BridgeClient brigdeClient = new BridgeClient(socketSession);
+                    brigdeClient.start();
+                } catch (IOException e) {
                 }
             }
         }
     }
 
-    class WorkWithClient extends Thread {
+    class BridgeClient extends Thread {
 
         private Socket socket;
 
-        //private JTable _table;
-        public WorkWithClient(Socket socket) {
+        public BridgeClient(Socket socket) {
             this.socket = socket;
         }
 
         @Override
         public void run() {
             try {
-                writeLog("Client: " + socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + socket.getPort() + " connect to Server");
-                //DataInputStream dis = new DataInputStream(socket.getInputStream());
-                //ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-                DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+                saveLog("Client: "
+                        + socket.getInetAddress().getHostAddress()
+                        + ":"
+                        + socket.getPort()
+                        + " connect to Server"
+                );
+                DataOutputStream dataOutput = new DataOutputStream(socket.getOutputStream());
 
                 DefaultTableModel model = (DefaultTableModel) tableClient.getModel();
-                TableRefresh Clientth = new TableRefresh(model);
-                int rowCount = model.getRowCount();
-                model.addRow(new Object[]{rowCount + 1, (socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + String.valueOf(socket.getPort()))});
-                Clientth.start();
-                //Gửi thông báo đường dẫn thư mục giám sát cho client
-                dos.writeUTF(FilePath);
-                writeLog("Monitor folder: " + FilePath);
-                dos.flush();
-                ReceiveMessage rc = new ReceiveMessage(socket);
-                rc.start();
+                RenewTable renewClient = new RenewTable(model);
+                int countLine = model.getRowCount();
+                model.addRow(new Object[]{
+                    countLine + 1,
+                    (socket.getInetAddress().getHostAddress()
+                    + ":"
+                    + String.valueOf(socket.getPort()))
+                });
+                renewClient.start();
+                dataOutput.writeUTF(PathMoitoring);
+                saveLog("Listening folder: " + PathMoitoring);
+                dataOutput.flush();
+                ListentAction listenAction = new ListentAction(socket);
+                listenAction.start();
             } catch (IOException e) {
 
             }
         }
     }
 
-    class ReceiveMessage extends Thread {
+    class ListentAction extends Thread {
 
         private Socket socket;
         private ObjectInputStream ois;
 
-        public ReceiveMessage(Socket socket) throws IOException {
+        public ListentAction(Socket socket) throws IOException {
             this.socket = socket;
             this.ois = new ObjectInputStream(socket.getInputStream());
         }
@@ -311,138 +288,144 @@ public class ServerGUI extends javax.swing.JFrame {
         public void run() {
             while (true) {
                 try {
-                    Message m = (Message) ois.readObject();
-                    if (m != null) {
+                    Message message = (Message) ois.readObject();
+                    if (message != null) {
                         DefaultTableModel model = (DefaultTableModel) tableLog.getModel();
-                        TableRefresh Clientth = new TableRefresh(model);
+                        RenewTable renewTable = new RenewTable(model);
                         int rowCount = model.getRowCount();
-                        model.addRow(new Object[]{rowCount + 1, m.getTime(), m.getAction(), (socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + String.valueOf(socket.getPort())), m.getDescription()});
-                        Clientth.start();
-                        writeLog(socket.getInetAddress().getLocalHost().getHostAddress().toString() + ":" + socket.getPort() + ": Change " + m.getAction() + " " + m.getTime() + " " + m.getDescription());
+                        model.addRow(
+                                new Object[]{
+                                    rowCount + 1,
+                                    message.getTime(),
+                                    message.getAction(),
+                                    (socket.getInetAddress()
+                                            .getHostAddress() + ":" + String.valueOf(socket.getPort())),
+                                    message.getDescription()});
+                        renewTable.start();
+                        saveLog(socket.getInetAddress().getHostAddress()
+                                + ":" + socket.getPort()
+                                + " => Hành động: "
+                                + message.getAction()
+                                + " | Thời gian: "
+                                + message.getTime()
+                                + " | Mô tả: "
+                                + message.getDescription()
+                        );
 
                     }
-
-                } catch (IOException ex) {
-                    Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ClassNotFoundException ex) {
+                } catch (IOException | ClassNotFoundException ex) {
                     Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
     }
 
-    class TableRefresh extends Thread {
+    class RenewTable extends Thread {
 
-        private final DefaultTableModel _model;
+        private final DefaultTableModel dataModel;
 
-        public TableRefresh(DefaultTableModel model) {
-            this._model = model;
+        public RenewTable(DefaultTableModel model) {
+            this.dataModel = model;
         }
 
         @Override
         public void run() {
             try {
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        _model.fireTableDataChanged();
-                    }
-                });
+                SwingUtilities.invokeLater(dataModel::fireTableDataChanged);
                 Thread.sleep(1000);
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
             }
 
         }
     }
 
-    class FilterClient extends Thread {
+    class SearchClient extends Thread {
 
-        public FilterClient() {
+        public SearchClient() {
         }
 
         @Override
         public void run() {
             try {
-                TableRowSorter<TableModel> sort = new TableRowSorter<>(tableClient.getModel());
-                tableClient.setRowSorter(sort);
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        inputFilterClient.getDocument().addDocumentListener(new DocumentListener() {
-                            @Override
-                            public void insertUpdate(DocumentEvent e) {
-                                String str = inputFilterClient.getText();
-                                if (str.trim().length() == 0) {
-                                    sort.setRowFilter(null);
-                                } else {
-                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                TableRowSorter<TableModel> sorted = new TableRowSorter<>(tableClient.getModel());
+                tableClient.setRowSorter(sorted);
+                SwingUtilities.invokeLater(() -> {
+                    inputFilterClient
+                            .getDocument()
+                            .addDocumentListener(new DocumentListener() {
+                                @Override
+                                public void insertUpdate(DocumentEvent e) {
+                                    String str = inputFilterClient.getText();
+                                    sorted.setRowFilter(null);
+                                    if (str.trim().length() > 0) {
+                                        sorted.setRowFilter(
+                                                RowFilter.regexFilter("(?i)" + str)
+                                        );
+                                    }
                                 }
-                            }
 
-                            @Override
-                            public void removeUpdate(DocumentEvent e) {
-                                String str = inputFilterClient.getText();
-                                if (str.trim().length() == 0) {
-                                    sort.setRowFilter(null);
-                                } else {
-                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                                @Override
+                                public void removeUpdate(DocumentEvent e) {
+                                    String str = inputFilterClient.getText();
+                                    sorted.setRowFilter(null);
+                                    if (str.trim().length() > 0) {
+                                        sorted.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                                    }
                                 }
-                            }
 
-                            @Override
-                            public void changedUpdate(DocumentEvent e) {
-                                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-                            }
-                        });
-                    }
+                                @Override
+                                public void changedUpdate(DocumentEvent e) {
+                                    throw new UnsupportedOperationException("Not SP.");
+                                }
+                            });
                 });
-
             } catch (Exception e) {
             }
         }
     }
 
     //Filter log trên server
-    class FilterLog extends Thread {
+    class SearchLog extends Thread {
 
-        public FilterLog() {
+        public SearchLog() {
         }
 
         @Override
         public void run() {
             try {
-                TableRowSorter<TableModel> sort = new TableRowSorter<>(tableLog.getModel());
-                tableLog.setRowSorter(sort);
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        inputFilterLog.getDocument().addDocumentListener(new DocumentListener() {
-                            @Override
-                            public void insertUpdate(DocumentEvent e) {
-                                String str = inputFilterLog.getText();
-                                if (str.trim().length() == 0) {
-                                    sort.setRowFilter(null);
-                                } else {
-                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                TableRowSorter<TableModel> sorted = new TableRowSorter<>(tableLog.getModel());
+                tableLog.setRowSorter(sorted);
+                SwingUtilities.invokeLater(() -> {
+                    inputFilterLog.getDocument()
+                            .addDocumentListener(
+                                    new DocumentListener() {
+                                @Override
+                                public void insertUpdate(DocumentEvent e) {
+                                    String inputData = inputFilterLog.getText();
+                                    sorted.setRowFilter(null);
+                                    if (inputData.trim().length() > 0) {
+                                        sorted.setRowFilter(
+                                                RowFilter.regexFilter("(?i)" + inputData)
+                                        );
+                                    }
                                 }
-                            }
 
-                            @Override
-                            public void removeUpdate(DocumentEvent e) {
-                                String str = inputFilterLog.getText();
-                                if (str.trim().length() == 0) {
-                                    sort.setRowFilter(null);
-                                } else {
-                                    sort.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                                @Override
+                                public void removeUpdate(DocumentEvent e) {
+                                    String inputData = inputFilterLog.getText();
+                                    sorted.setRowFilter(null);
+                                    if (inputData.trim().length() > 0) {
+                                        sorted.setRowFilter(
+                                                RowFilter.regexFilter("(?i)" + inputData)
+                                        );
+                                    }
                                 }
-                            }
 
-                            @Override
-                            public void changedUpdate(DocumentEvent e) {
-                                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-                            }
-                        });
-                    }
+                                @Override
+                                public void changedUpdate(DocumentEvent e) {
+                                    throw new UnsupportedOperationException("Not SP.");
+                                }
+                            });
                 });
 
             } catch (Exception e) {
@@ -451,28 +434,12 @@ public class ServerGUI extends javax.swing.JFrame {
     }
 
     //Ghi log Server
-    private static void writeLog(String info) {
-        String filename = "LogServer.txt";
-        BufferedWriter bw = null;
-        FileWriter fw = null;
-        try {
-            fw = new FileWriter(filename, true);
-            bw = new BufferedWriter(fw);
-            bw.write(info);
-            bw.write("\n");
+    private static void saveLog(String log) throws IOException {
+        String filename = "log/server.txt";
+        try ( FileWriter fw = new FileWriter(filename, true)) {
+            fw.write(log + "\n");
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (bw != null) {
-                    bw.close();
-                }
-                if (fw != null) {
-                    fw.close();
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
         }
     }
 

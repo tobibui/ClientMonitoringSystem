@@ -1,0 +1,108 @@
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000: ENTRY_CREATE 27/08/2022 04:02:18 New folder
+192.168.0.107:3000: ENTRY_DELETE 27/08/2022 04:02:21 New folder
+192.168.0.107:3000: ENTRY_CREATE 27/08/2022 04:02:21 12213213
+192.168.0.107:3000: ENTRY_DELETE 27/08/2022 04:02:48 ehe
+192.168.0.107:3000: ENTRY_CREATE 27/08/2022 04:02:48 888
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000: ENTRY_DELETE 27/08/2022 04:14:54 tete - Copy.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => ENTRY_DELETE 27/08/2022 04:54:36 tete.txt
+192.168.0.107:3000 => ENTRY_CREATE 27/08/2022 04:54:36 acc.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => ENTRY_DELETE 27/08/2022 05:10:20 acc.txt
+192.168.0.107:3000 => ENTRY_CREATE 27/08/2022 05:20:49 New folder
+192.168.0.107:3000 => ENTRY_DELETE 27/08/2022 05:20:51 New folder
+192.168.0.107:3000 => ENTRY_CREATE 27/08/2022 05:20:51 qeweqwe
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:25:16 New folder
+192.168.0.107:3000 => Xóa 27/08/2022 05:25:18 New folder
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:25:18 Hihi
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:25:58 Hihi\New Text Document.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 05:25:58 Hihi
+192.168.0.107:3000 => Xóa 27/08/2022 05:26:30 Hihi\New Text Document.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:26:30 Hihi\tuyen.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 05:26:30 Hihi
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:26:44 Hihi\New Text Document.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 05:26:44 Hihi
+192.168.0.107:3000 => Xóa 27/08/2022 05:26:46 Hihi\New Text Document.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:26:46 Hihi\ok.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 05:26:46 Hihi
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:27:02 New Text Document.txt
+192.168.0.107:3000 => Xóa 27/08/2022 05:27:07 New Text Document.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:27:07 om.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 05:27:28 om.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Tạo mới 27/08/2022 05:39:11 Tạo mới om - Copy.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 05:39:11 Chỉnh sửa om - Copy.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Xóa 27/08/2022 05:53:51 Xóa om - Copy.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Xóa 27/08/2022 05:56:28 Xóa om.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Xóa 27/08/2022 06:02:33 Xóa qeweqwe
+192.168.0.107:3000 => Xóa 27/08/2022 06:03:01 Xóa 888
+192.168.0.107:3000 => Xóa 27/08/2022 06:03:15 Xóa Hihi
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:08:30 Tạo mới LogClient.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 06:08:30 Chỉnh sửa LogClient.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 06:08:30 Chỉnh sửa LogClient.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:08:30 Tạo mới LogServer.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 06:08:30 Chỉnh sửa LogServer.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:13:57 Tạo mới LogClient - Copy.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 06:13:57 Chỉnh sửa LogClient - Copy.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Xóa 27/08/2022 06:32:44 Xóa LogClient - Copy.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:32:51 Tạo mới New folder
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Xóa 27/08/2022 06:38:08 Xóa 12213213
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:38:14 Tạo mới New Text Document.txt
+192.168.0.107:3000 => Xóa 27/08/2022 06:38:15 Xóa New Text Document.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:38:15 Tạo mới 123.txt
+192.168.0.107:3000 => Xóa 27/08/2022 06:38:34 Xóa 123.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:38:34 Tạo mới 1.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 06:38:50 Tạo mới New Text Document.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 06:39:01 Chỉnh sửa New Text Document.txt
+192.168.0.107:3000: Ket noi server
+Client: 192.168.0.107:23860 connect to Server
+Listening path: C:\ClientMonitoringSystem\Data
+192.168.0.107:3000 => Xóa 27/08/2022 09:54:52 Xóa okla
+192.168.0.107:23860: Change Xóa 27/08/2022 09:54:52 Xóa okla
+192.168.0.107:3000 => Tạo mới 27/08/2022 09:55:11 Tạo mới New Text Document (2).txt
+192.168.0.107:23860: Change Tạo mới 27/08/2022 09:55:11 Tạo mới New Text Document (2).txt
+192.168.0.107:3000 => Xóa 27/08/2022 09:55:19 Xóa New Text Document (2).txt
+192.168.0.107:23860: Change Xóa 27/08/2022 09:55:19 Xóa New Text Document (2).txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 09:55:19 Tạo mới tuyen.txt
+192.168.0.107:23860: Change Xóa 27/08/2022 09:55:19 Xóa New Text Document (2).txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 09:56:06 Tạo mới New Text Document (2).txt
+192.168.0.107:23860: Change Tạo mới 27/08/2022 09:56:06 Tạo mới New Text Document (2).txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Xóa 27/08/2022 11:25:01 Xóa New folder
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Tạo mới 27/08/2022 11:35:04 Tạo mới aloalo
+192.168.0.107:3000 => Tạo mới 27/08/2022 11:35:15 Tạo mới hehe.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 11:35:15 Chỉnh sửa hehe.txt
+192.168.0.107:3000 => Xóa 27/08/2022 11:35:28 Xóa hehe.txt
+192.168.0.107:3000 => Tạo mới 27/08/2022 11:36:49 Tạo mới hehe.txt
+192.168.0.107:3000 => Chỉnh sửa 27/08/2022 11:36:49 Chỉnh sửa hehe.txt
+192.168.0.107:3000 => Xóa 27/08/2022 11:36:59 Xóa hehe.txt
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Hành động: Xóa | Thời gian: 28/08/2022 12:12:44 | Mô tả: Xóa LogClient.txt
+192.168.0.107:3000 => Hành động: Xóa | Thời gian: 28/08/2022 12:12:54 | Mô tả: Xóa LogServer.txt
+192.168.0.107:3000 => Hành động: Tạo mới | Thời gian: 28/08/2022 12:13:06 | Mô tả: Tạo mới test.txt
+192.168.0.107:3000 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 12:13:06 | Mô tả: Chỉnh sửa test.txt
+192.168.0.107:3000 => Hành động: Tạo mới | Thời gian: 28/08/2022 12:13:13 | Mô tả: Tạo mới .test.txt.swp
+192.168.0.107:3000 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 12:13:13 | Mô tả: Chỉnh sửa .test.txt.swp
+192.168.0.107:3000 => Hành động: Xóa | Thời gian: 28/08/2022 12:13:14 | Mô tả: Xóa .test.txt.swp
+192.168.0.107:3000 => Hành động: Tạo mới | Thời gian: 28/08/2022 12:13:14 | Mô tả: Tạo mới .test.txt.swp
+192.168.0.107:3000 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 12:13:14 | Mô tả: Chỉnh sửa .test.txt.swp
+192.168.0.107:3000 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 12:13:22 | Mô tả: Chỉnh sửa test.txt
+192.168.0.107:3000 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 12:13:22 | Mô tả: Chỉnh sửa test.txt
+192.168.0.107:3000 => Hành động: Xóa | Thời gian: 28/08/2022 12:13:22 | Mô tả: Xóa .test.txt.swp
+192.168.0.107:3000: Ket noi server
+192.168.0.107:3000 => Hành động: Xóa | Thời gian: 28/08/2022 12:16:43 | Mô tả: Xóa test.txt
+192.168.0.107:3000 => Hành động: Tạo mới | Thời gian: 28/08/2022 12:16:57 | Mô tả: Tạo mới ahihi.rm
+192.168.0.107:3000 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 12:16:57 | Mô tả: Chỉnh sửa ahihi.rm
