@@ -227,6 +227,7 @@ public class ClientGUI extends javax.swing.JFrame {
                     WatchKey key = watchRealtime.take();
                     for (WatchEvent<?> e : key.pollEvents()) {
                         Object context = e.context();
+                        
                         newMessage.setTime(currentTime.format(new Date()));
                         newMessage.setAction(e.kind().name());
                         newMessage.setDescription(context.toString(), e.kind().name());
