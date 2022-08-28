@@ -1,0 +1,14 @@
+Client: 192.168.0.107:14660 connect to Server
+Listening folder: C:\ClientMonitoringSystem\Data
+Client: 192.168.0.107:14661 connect to Server
+Listening folder: C:\ClientMonitoringSystem\Data
+192.168.0.107:14660 => Hành động: Xóa | Thời gian: 28/08/2022 01:06:33 | Mô tả: Xóa ab.txt
+192.168.0.107:14661 => Hành động: Xóa | Thời gian: 28/08/2022 01:06:33 | Mô tả: Xóa ab.txt
+192.168.0.107:14660 => Hành động: Tạo mới | Thời gian: 28/08/2022 01:07:10 | Mô tả: Tạo mới test.txt
+192.168.0.107:14661 => Hành động: Tạo mới | Thời gian: 28/08/2022 01:07:10 | Mô tả: Tạo mới test.txt
+192.168.0.107:14660 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 01:07:10 | Mô tả: Chỉnh sửa test.txt
+192.168.0.107:14661 => Hành động: Chỉnh sửa | Thời gian: 28/08/2022 01:07:10 | Mô tả: Chỉnh sửa test.txt
+192.168.0.107:14661 => Hành động: Tạo mới | Thời gian: 28/08/2022 01:07:29 | Mô tả: Tạo mới java
+192.168.0.107:14660 => Hành động: Tạo mới | Thời gian: 28/08/2022 01:07:29 | Mô tả: Tạo mới java
+192.168.0.107:14660 => Hành động: Xóa | Thời gian: 28/08/2022 01:07:55 | Mô tả: Xóa test.txt
+192.168.0.107:14661 => Hành động: Xóa | Thời gian: 28/08/2022 01:07:55 | Mô tả: Xóa test.txt
