@@ -1,0 +1,39 @@
+1. Đầu tiên, người quản lí start server. Server sẽ hiển thị IP, port để người quản lí có
+thể gửi IP, port này cho các người dùng thành viên ở client để kết nối vào server.
+    -> 5đ
+2. Người dùng thành viên start client. Người dùng thành viên điền vào IP, port để kết
+nối với server. Thông tin kết nối phải được thông báo ở server và client. Nếu kết nối bị lỗi, ứng
+dụng cho phép người dùng thành viên thực hiện kết nối lại.
+    -> 5đ
+3. Người quản lí server xem được danh sách các client đang kết nối. Có thể tìm kiếm
+trên danh sách này, dựa vào IP của client.
+    -> 5đ
+4. Khi client kết nối vào server, server mặc nhiên sẽ được giám sát 1 thư mục mặc
+định trên máy client. VD: folder C:/ClientMonitoringSystem/Data
+    -> 5đ
+5. Người quản lí server có thể browse để xem danh sách cây thư mục ở trên máy
+client. Từ đó, người quản lí chọn thay đổi sang 1 folder khác để giám sát.
+    -> 8đ
+6. Tất cả các thao tác của client trên folder được chọn, đều được giám sát và ghi
+log ở phía server. Một số cột cần hiển thị trên JTable như: STT, thời điểm, action, IP client,
+diễn giải cho action. Ngoài ra, cho phép người quản lí server có thể tìm kiếm / filter theo thời
+điểm, action, client….
+    -> 30đ
+7. Tất cả các thao tác của client đều được hiển thị ở phía client. Tương tự, một số
+cột cần hiển thị trên JTable của client như: STT, thời gian, action, diễn giải. Cũng cho phép
+người dùng tìm kiếm / filter trên các cột này.
+    -> 10đ
+8. (10đ) Tất cả thao tác giám sát được đều phải ghi log thành tập tin log trên máy server,
+để khi tắt server và mở lại lại server, người quản lí có thể load lại các file log cũ và xem lại.
+    -> 10đ
+9. (5đ) Tương tự, ở phía client, cũng cần ghi log thành tập tin, những gì đã được giám
+sát.
+    -> 5đ
+10. (Tối đa ko quá 20đ) Các chức năng khác mà SV tự đề xuất, có ý nghĩa sử dụng thực
+tế.
+    -> 0đ
+
+-> Total: 83đ
+---------------------------------------------------------------------------------------------------------
+Tham khao phan filter:
+https://stackoverflow.com/questions/54992445/tablerowsorter-results-in-row-numbers-being-disorganized
